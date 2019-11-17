@@ -16,7 +16,7 @@ for Debian and Ubuntu  <= 11.10 :
 
 ::
 
-    sido apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
+    sudo apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
         libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
         libssl-dev libdb4.8++-dev
 
