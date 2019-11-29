@@ -138,7 +138,7 @@ cd /c/android/42-master/src/leveldb
 TARGET_OS=OS_ANDROID_CROSSCOMPILE make libleveldb.a libmemenv.a
 
 3. Компиляция
-3.1 Собираем 42 QT
+3.1 Собираем 42-qt
 
 Откройте файл 42-qt.pro
 Вместо 

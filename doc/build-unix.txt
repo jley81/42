@@ -18,7 +18,7 @@ To Build
 cd src/
 make -f makefile.unix            # Headless 42
 
-See readme-qt.rst for instructions on building 42 QT,
+See readme-qt.rst for instructions on building 42-qt,
 the graphical 42.
 
 Dependencies
