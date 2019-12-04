@@ -305,6 +305,7 @@ void RPCConsole::setClientModel(ClientModel *model)
 		wordList.sort();
         autoCompleter = new QCompleter(wordList, this);
 		autoCompleter->setModelSorting(QCompleter::CaseSensitivelySortedModel);
+        ui->lineEdit->setEnabled(true);
         ui->lineEdit->setCompleter(autoCompleter);
         autoCompleter->popup()->installEventFilter(this);
     }
