@@ -85,7 +85,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     unlockWalletAction(0),
     unlockWalletMiningAction(0),
     changePassphraseAction(0),
-    aboutQtAction(0),
     trayIcon(0),
     notificator(0),
     rpcConsole(0),
@@ -360,13 +359,6 @@ void BitcoinGUI::createActions(int nQtStyle)
     aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About 42"), this);
     aboutAction->setStatusTip(tr("Show information about 42"));
     aboutAction->setMenuRole(QAction::AboutRole);
-#if QT_VERSION < 0x050000
-    aboutQtAction = new QAction(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
-#else
-    aboutQtAction = new QAction(QIcon(":/qt-project.org/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
-#endif
-    aboutQtAction->setStatusTip(tr("Show information about Qt"));
-    aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
     optionsAction->setStatusTip(tr("Modify configuration options for 42"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
@@ -408,7 +400,6 @@ void BitcoinGUI::createActions(int nQtStyle)
 
     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
     connect(aboutAction, SIGNAL(triggered()), this, SLOT(aboutClicked()));
-    connect(aboutQtAction, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
     connect(optionsAction, SIGNAL(triggered()), this, SLOT(optionsClicked()));
     connect(toggleHideAction, SIGNAL(triggered()), this, SLOT(toggleHidden()));
     connect(encryptWalletAction, SIGNAL(triggered(bool)), this, SLOT(encryptWallet(bool)));
@@ -459,9 +450,7 @@ void BitcoinGUI::createMenuBar()
 
     QMenu *help = appMenuBar->addMenu(tr("&Help"));
     help->addAction(openRPCConsoleAction);
-    help->addSeparator();
     help->addAction(aboutAction);
-    help->addAction(aboutQtAction);
 }
 
 void BitcoinGUI::createToolBars(int nQtStyle)
