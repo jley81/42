@@ -401,7 +401,6 @@ QString MintingTableModel::lookupAddress(const std::string &address, bool toolti
 QString MintingTableModel::formatTxPoSReward(KernelRecord *wtx) const
 {
     QString posReward;
-    int nBits = GetLastBlockIndex(pindexBest, true)->nBits;
     posReward += QString(QObject::tr("from  %1 to %2")).arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), wtx->getPoSReward(0)), 
         BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), wtx->getPoSReward(mintingInterval))); 
     return posReward;
