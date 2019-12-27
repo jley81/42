@@ -1389,7 +1389,7 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong 42 will not work properly.");
+                    string strMessage("Warning: Please check that your computer's date and time are correct! If your clock is wrong 42 will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
                     uiInterface.ThreadSafeMessageBox(strMessage+" ", string("42"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
