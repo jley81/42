@@ -180,7 +180,7 @@ $(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS)
 USE_LEVELDB:=0 
 на
 USE_LEVELDB:=1
-(выше USE_IPV6:=1)
+
 Откройте файл /home/<ваше имя>/42/src/leveldb/Makefile
 Вставьте ниже строчки CXXFLAGS += -I. -I./include $(PLATFORM_CXXFLAGS) $(OPT) следующие строки:
 
@@ -271,28 +271,28 @@ Qt4 + транзакционный индекс LevelDB
 
 export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
 cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt4 "USE_IPV6=1" "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
+i686-w64-mingw32.static-qmake-qt4  "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
 make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
 
 Qt4 + транзакционный индекс BDB
 
 export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
 cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt4 "USE_IPV6=1" "USE_ASM=1" 42-qt.pro
+i686-w64-mingw32.static-qmake-qt4  "USE_ASM=1" 42-qt.pro
 make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
 
 Qt5 + транзакционный индекс LevelDB
 
 export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
 cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt5 "USE_IPV6=1" "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
+i686-w64-mingw32.static-qmake-qt5  "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
 make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
 
 Qt5 + транзакционный индекс BDB
 
 export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
 cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt5 "USE_IPV6=1" "USE_ASM=1" 42-qt.pro
+i686-w64-mingw32.static-qmake-qt5  "USE_ASM=1" 42-qt.pro
 make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
 
 Если всё сделано правильно, то файл 42-qt.exe будет находится в папке /home/<ваше имя>/42/release.

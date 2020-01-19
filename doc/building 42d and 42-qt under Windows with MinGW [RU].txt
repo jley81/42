@@ -154,7 +154,6 @@ mingw32-make
 USE_LEVELDB:=0 
 на
 USE_LEVELDB:=1
-(выше USE_IPV6:=1)
 
 -Сохраните измененный файл makefile.mingw
 
@@ -226,7 +225,7 @@ Qt5 + транзакционный индекс BDB
 
 set PATH=%PATH%;C:\Qt\5.4.0\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_ASM=1" 42-qt.pro
+qmake  "USE_ASM=1" 42-qt.pro
 mingw32-make -f Makefile.Release
 
 
@@ -234,21 +233,21 @@ Qt5 + транзакционный индекс LevelDB
 
 set PATH=%PATH%;C:\Qt\5.4.0\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
+qmake  "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
 mingw32-make -f Makefile.Release
 
 Qt4 + транзакционный индекс BDB
 
 set PATH=%PATH%;C:\Qt\4.8.7\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_ASM=1" 42-qt.pro
+qmake  "USE_ASM=1" 42-qt.pro
 mingw32-make -f Makefile.Release
 
 Qt4 + транзакционный индекс LevelDB
 
 set PATH=%PATH%;C:\Qt\4.8.7\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
+qmake  "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
 mingw32-make -f Makefile.Release
 
 
@@ -421,7 +420,7 @@ Qt5 + транзакционный индекс BDB
 
 set PATH=%PATH%;C:\Qt\5.4.0-x64\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_ASM=1" 42-qt64.pro
+qmake  "USE_ASM=1" 42-qt64.pro
 mingw32-make -f Makefile.Release
 
 
@@ -429,21 +428,21 @@ Qt5 + транзакционный индекс LevelDB
 
 set PATH=%PATH%;C:\Qt\5.4.0-x64\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_LEVELDB=1" "USE_ASM=1" 42-qt64.pro
+qmake  "USE_LEVELDB=1" "USE_ASM=1" 42-qt64.pro
 mingw32-make -f Makefile.Release
 
 Qt4 + транзакционный индекс BDB
 
 set PATH=%PATH%;C:\Qt\4.8.7-x64\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_ASM=1" 42-qt64.pro
+qmake  "USE_ASM=1" 42-qt64.pro
 mingw32-make -f Makefile.Release
 
 Qt4 + транзакционный индекс LevelDB
 
 set PATH=%PATH%;C:\Qt\4.8.7-x64\bin
 cd C:\MyProjects\42-master
-qmake "USE_IPV6=1" "USE_LEVELDB=1" "USE_ASM=1" 42-qt64.pro
+qmake  "USE_LEVELDB=1" "USE_ASM=1" 42-qt64.pro
 mingw32-make -f Makefile.Release
 
 Если всё сделано правильно, то файл 42-qt.exe будет находится в папке C:\MyProjects\42-master\release
