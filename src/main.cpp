@@ -72,7 +72,6 @@ CScript COINBASE_FLAGS;
 const string strMessageMagic = "42 Signed Message:\n";
 
 // Settings
-int64_t nTransactionFee = MIN_TX_FEE;
 int64_t nMinimumInputValue = 0;
 
 // Ping and address broadcast intervals
