@@ -142,6 +142,8 @@ namespace GUIUtil
     };
     /* Convert seconds into a QString with days, hours, mins, secs */
     QString formatDurationStr(int secs);
+	
+    void SetBlackThemeQSS(QApplication& app);
 
 } // namespace GUIUtil
 

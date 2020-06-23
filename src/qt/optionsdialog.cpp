@@ -179,6 +179,7 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->displayAddresses, OptionsModel::DisplayAddresses);
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
+	mapper->addMapping(ui->useBlackTheme, OptionsModel::UseBlackTheme);
 }
 
 void OptionsDialog::enableApplyButton()
