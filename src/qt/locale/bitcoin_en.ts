@@ -2135,6 +2135,11 @@ Reduce the number of addresses involved in the address creation.</translation>
         <translation>Display coin &amp;control features (experts only!)</translation>
     </message>
     <message>
+        <location filename="../forms/optionsdialog.ui" line="482"/>
+        <source>Use black visual theme (requires restart)</source>
+        <translation>Use black visual theme (requires restart)</translation>
+    </message>
+    <message>
         <location filename="../forms/optionsdialog.ui" line="480"/>
         <location filename="../forms/optionsdialog.ui" line="493"/>
         <source>Third party URLs that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>

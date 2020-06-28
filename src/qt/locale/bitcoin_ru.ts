@@ -2137,7 +2137,11 @@ Reduce the number of addresses involved in the address creation.</source>
         <translation>Управление &amp;входами (только для продвинутых пользователей!)</translation>
     </message>
     <message>
-        <location filename="../forms/optionsdialog.ui" line="480"/>
+        <location filename="../forms/optionsdialog.ui" line="482"/>
+        <source>Use black visual theme (requires restart)</source>
+        <translation>Использовать чёрную тему оформления (требуется перезапуск)</translation>
+    </message>
+    <message>
         <location filename="../forms/optionsdialog.ui" line="493"/>
         <source>Third party URLs that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
         <translation>Сторонние URL, которые отображаются на вкладке транзакций как пункты контекстного меню. %s в URL заменяется хешем транзакции. URL отделяются друг от друга вертикальной чертой |.</translation>
