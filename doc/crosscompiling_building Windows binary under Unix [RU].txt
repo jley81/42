@@ -1,20 +1,21 @@
 ﻿Данный способ должен подходить для любой Unix системы: Linux, FreeBSD, MacOS X
-Данное руководство писалось на Linux Mint 17.1 ( http://linuxmint.com/ ) и проверялось на Ubuntu 14.04 (https://www.ubuntu.com/)
+Данное руководство писалось на Linux Mint 17.1 ( http://linuxmint.com/ ) и проверялось на Ubuntu 16.04 (https://www.ubuntu.com/)
 
-1) Подготовка системы для кросскомпиляции.
+1. Подготовка системы для кросскомпиляции.
 
-sudo apt-get install git bison cmake flex g++ gperf ruby scons libghc-zlib-dev  libghc-zlib-bindings-dev
+sudo apt-get install git bison cmake flex g++ gperf ruby scons libghc-zlib-dev libghc-zlib-bindings-dev autoconf automake autopoint libtool intltool libtool-bin lzip p7zip-full libgtk2.0-dev
 
-2) Установка MXE и зависимостей
+
+2. Установка MXE и зависимостей
 
 cd /home/<ваше имя>/
 git clone https://github.com/mxe/mxe.git
- 
-sudo apt-get install autoconf automake autopoint libtool intltool libtoolize p7zip-full libgtk2.0-dev
 
-2.1) gcc
+
+2.1 gcc
 
 cd /home/<ваше имя>/mxe
+git checkout add612f408ac24c5f9ae7f525b5c1a3439151023
 make gcc zlib libpng
 
 Проверка того, что установка gcc прошла успешно:
@@ -28,18 +29,8 @@ gcc version 5.4.0 (GCC)
 libz.a
 libpng.a
 
-2.2) Openssl
- 
-cd /home/<ваше имя>/mxe
-make openssl
 
-Проверка что установка Openssl прошла успешно:
-В папке /home/<ваше имя>/mxe/usr/i686-w64-mingw32.static/lib должны появиться два файла
--libssl.a
--libcrypto.a
-В папке mxe/usr/i686-w64-mingw32.static/include должна появиться папка openssl
-
-2.3) Boost
+2.2 Boost
 
 cd /home/<ваше имя>/mxe
 make boost
@@ -47,11 +38,58 @@ make boost
 Проверка что установка Boost прошла успешно:
 В /home/<ваше имя>/mxe/usr/i686-w64-mingw32.static/lib папке должны появиться файлы:
 -libboost_имябиблиотеки_mt.a (libboost_atomic-mt.a и другие подобные файлы)
--libboost_имябиблиотеки_mt-d.a (libboost_atomic-mt-d.a и другие подобные файлы)                   -!!!!!!!!!!!!нет
 
 В папке /home/<ваше имя>/mxe/usr/i686-w64-mingw32.static/include должна появиться папка boost
 
-2.4) Berkeley DB
+
+2.3 OpenSSL
+
+Чтобы сборка проходила с последней поддерживаемой версией (1.0.2u):
+-Откройте файл /home/<ваше имя>/mxe/plugins/examples/openssl1.0/openssl1.0.mk
+-Измените 6 и 7 строку на
+$(PKG)_VERSION  := 1.0.2u
+$(PKG)_CHECKSUM := ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16
+-Сохраните изменения
+
+
+2.4 Qt4 и Qt5
+
+Qt4
+-Откройте терминал:
+
+cd /home/<ваше имя>/mxe
+make qt
+
+Проверка что Qt4 собрался правильно:
+-Откройте терминал:
+
+export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
+i686-w64-mingw32.static-qmake-qt4 -v
+
+-Должно появиться в ответ
+QMake version 2.01a
+Using Qt version 4.8.7 in /home/<ваше имя>/mxe/usr/i686-w64-mingw32.static/qt/lib
+
+
+Qt5
+-Откройте терминал:
+
+export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
+cd /home/<ваше имя>/mxe
+make qtbase qttools qttranslations
+
+Проверка что Qt5 собрался правильно:
+-Откройте терминал:
+
+export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
+i686-w64-mingw32.static-qmake-qt5 -v
+
+-Должно появиться в ответ
+QMake version 3.1
+Using Qt version 5.9.3 in /home/<ваше имя>/mxe/usr/i686-w64-mingw32.static/qt5/lib
+
+
+2.5 Berkeley DB
 -Скачайте http://download.oracle.com/berkeley-db/db-6.0.20.tar.gz
 -Распакуйте в домашнюю папку
 -Откройте файл /home/<ваше имя>/db-6.0.20/src/dbinc/win_db.h
@@ -75,7 +113,8 @@ make
 libdb.a
 libdb_cxx.a
 
-2.5) qrencode
+
+2.6 qrencode
 -Скачайте http://fukuchi.org/works/qrencode/qrencode-3.4.4.tar.gz
 -Распакуйте в домашнюю папку
 -Откройте терминал:
@@ -90,40 +129,6 @@ make
 в папке /home/<ваше имя>/qrencode-3.4.4/.libs должен быть файл:
 libqrencode.a
 
-2.6 Qt 5 и Qt 4
-
-Qt 4
--Откройте терминал:
-
-cd /home/<ваше имя>/mxe
-make qt
-
-Проверка что Qt4 собрался правильно:
--Откройте терминал:
-
-export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
-i686-w64-mingw32.static-qmake-qt4 -v
-
--Должно появиться в ответ
-QMake version 2.01a
-Using Qt version 4.8.7 in /home/<ваше имя>/mxe/usr/i686-w64-mingw32.static/qt/lib
-
-Qt 5
--Откройте терминал:
-
-export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
-cd /home/<ваше имя>/mxe
-make qtbase qttools qttranslations
-
-Проверка что Qt5 собрался правильно:
--Откройте терминал:
-
-export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
-i686-w64-mingw32.static-qmake-qt5 -v
-
--Должно появиться в ответ
-QMake version 3.1
-Using Qt version 5.8.0 in /home/<ваше имя>/mxe/usr/i686-w64-mingw32.static/qt5/lib
 
 3. Компиляция
 
@@ -267,32 +272,32 @@ win32:QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
 -Сохраните измененный файл 42-qt.pro
 -Откройте терминал и выполните следующие команды:
 
-Qt4 + транзакционный индекс LevelDB
-
-export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
-cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt4  "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
-make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
-
 Qt4 + транзакционный индекс BDB
 
 export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
 cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt4  "USE_ASM=1" 42-qt.pro
+i686-w64-mingw32.static-qmake-qt4 "USE_ASM=1" 42-qt.pro
 make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
 
-Qt5 + транзакционный индекс LevelDB
+Qt4 + транзакционный индекс LevelDB
 
 export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
 cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt5  "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
+i686-w64-mingw32.static-qmake-qt4 "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
 make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
 
 Qt5 + транзакционный индекс BDB
 
 export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
 cd /home/<ваше имя>/42
-i686-w64-mingw32.static-qmake-qt5  "USE_ASM=1" 42-qt.pro
+i686-w64-mingw32.static-qmake-qt5 "USE_ASM=1" 42-qt.pro
+make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
+
+Qt5 + транзакционный индекс LevelDB
+
+export PATH=/home/<ваше имя>/mxe/usr/bin:$PATH
+cd /home/<ваше имя>/42
+i686-w64-mingw32.static-qmake-qt5 "USE_LEVELDB=1" "USE_ASM=1" 42-qt.pro
 make -j n -f Makefile.Release  (вместо n количество ядер вашего процессора, которые вы хотите выделить под сборку)
 
 Если всё сделано правильно, то файл 42-qt.exe будет находится в папке /home/<ваше имя>/42/release.
