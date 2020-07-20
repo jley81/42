@@ -1754,7 +1754,7 @@ Value validateaddress(const Array& params, bool fHelp)
             string currentAddress = address.ToString();
             CTxDestination dest = address.Get();
             ret.push_back(Pair("address", currentAddress));
-            isminetype mine = pwalletMain ? IsMine(*pwalletMain, address) : MINE_NO;
+			isminetype mine = IsMine(*pwalletMain, address);
             ret.push_back(Pair("ismine", mine != MINE_NO));
             if (mine != MINE_NO) {
                 ret.push_back(Pair("watchonly", mine == MINE_WATCH_ONLY));
