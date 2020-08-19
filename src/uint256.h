@@ -354,7 +354,7 @@ public:
         return std::vector<unsigned char>(begin(), end());
     }
 
-    size_t size()
+    size_t size() const
     {
         return sizeof(pn);
     }
