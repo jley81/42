@@ -1,4 +1,4 @@
-Copyright (c) 2016-2020 42 Developers
+Copyright (c) 2016-2021 42 Developers
 Copyright (c) 2013-2018 NovaCoin Developers
 Copyright (c) 2011-2013 PPCoin Developers
 Distributed under the MIT/X11 software license, see the accompanying
