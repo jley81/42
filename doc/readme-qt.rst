@@ -7,28 +7,17 @@ Build instructions
 Debian
 -------
 
-First, make sure that the required packages for Qt4 development of your
-distribution are installed, these are
+First, make sure that the required packages for Qt5 development of your
+distribution are installed, for Debian and Ubuntu these are:
 
 ::
 
-for Debian and Ubuntu  <= 11.10 :
-
-::
-
-    sudo apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
-        libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
-        libssl-dev libdb4.8++-dev
-
-for Ubuntu >= 12.04 (please read the 'Berkely DB version warning' below):
-
-::
-
-    sudo apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
+    apt-get install qt5-default qt5-qmake qtbase5-dev-tools qttools5-dev-tools \
+        build-essential libboost-dev libboost-system-dev \
         libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
         libssl-dev libdb++-dev
-		
-install Git:
+
+Install Git:
 
 ::
 
@@ -167,19 +156,3 @@ If the globally installed development package of Berkely DB installed on your sy
 build yourself will be linked against that. The first time you run with a 5.X version the database will be upgraded,
 and 4.X cannot open the new format. This means that you cannot go back to the old statically linked version without
 significant hassle!
-
-Ubuntu 11.10 warning
-====================
-
-Ubuntu 11.10 has a package called 'qt-at-spi' installed by default.  At the time of writing, having that package
-installed causes 42-qt to crash intermittently.  The issue has been reported as `launchpad bug 857790`_, but
-isn't yet fixed.
-
-Until the bug is fixed, you can remove the qt-at-spi package to work around the problem, though this will presumably
-disable screen reader functionality for Qt apps:
-
-::
-
-    sudo apt-get remove qt-at-spi
-
-.. _`launchpad bug 857790`: https://bugs.launchpad.net/ubuntu/+source/qt-at-spi/+bug/857790
