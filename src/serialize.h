@@ -105,8 +105,6 @@ enum
 
 
 
-
-
 //
 // Basic types
 //
@@ -158,8 +156,6 @@ template<typename Stream> inline void Unserialize(Stream& s, double& a,         
 inline unsigned int GetSerializeSize(bool a, int, int=0)                          { return sizeof(char); }
 template<typename Stream> inline void Serialize(Stream& s, bool a, int, int=0)    { char f=a; WRITEDATA(s, f); }
 template<typename Stream> inline void Unserialize(Stream& s, bool& a, int, int=0) { char f; READDATA(s, f); a=f; }
-
-
 
 
 
@@ -407,11 +403,6 @@ template<typename T0, typename T1, typename T2> unsigned int GetSerializeSize(co
 template<typename Stream, typename T0, typename T1, typename T2> void Serialize(Stream& os, const boost::tuple<T0, T1, T2>& item, int nType, int nVersion);
 template<typename Stream, typename T0, typename T1, typename T2> void Unserialize(Stream& is, boost::tuple<T0, T1, T2>& item, int nType, int nVersion);
 
-// 4 tuple
-template<typename T0, typename T1, typename T2, typename T3> unsigned int GetSerializeSize(const boost::tuple<T0, T1, T2, T3>& item, int nType, int nVersion);
-template<typename Stream, typename T0, typename T1, typename T2, typename T3> void Serialize(Stream& os, const boost::tuple<T0, T1, T2, T3>& item, int nType, int nVersion);
-template<typename Stream, typename T0, typename T1, typename T2, typename T3> void Unserialize(Stream& is, boost::tuple<T0, T1, T2, T3>& item, int nType, int nVersion);
-
 // map
 template<typename K, typename T, typename Pred, typename A> unsigned int GetSerializeSize(const std::map<K, T, Pred, A>& m, int nType, int nVersion);
 template<typename Stream, typename K, typename T, typename Pred, typename A> void Serialize(Stream& os, const std::map<K, T, Pred, A>& m, int nType, int nVersion);
@@ -421,7 +412,6 @@ template<typename Stream, typename K, typename T, typename Pred, typename A> voi
 template<typename K, typename Pred, typename A> unsigned int GetSerializeSize(const std::set<K, Pred, A>& m, int nType, int nVersion);
 template<typename Stream, typename K, typename Pred, typename A> void Serialize(Stream& os, const std::set<K, Pred, A>& m, int nType, int nVersion);
 template<typename Stream, typename K, typename Pred, typename A> void Unserialize(Stream& is, std::set<K, Pred, A>& m, int nType, int nVersion);
-
 
 
 
@@ -449,7 +439,6 @@ inline void Unserialize(Stream& is, T& a, long nType, int nVersion)
 {
     a.Unserialize(is, (int)nType, nVersion);
 }
-
 
 
 
@@ -651,40 +640,6 @@ void Unserialize(Stream& is, boost::tuple<T0, T1, T2>& item, int nType, int nVer
 
 
 //
-// 4 tuple
-//
-template<typename T0, typename T1, typename T2, typename T3>
-unsigned int GetSerializeSize(const boost::tuple<T0, T1, T2, T3>& item, int nType, int nVersion)
-{
-    unsigned int nSize = 0;
-    nSize += GetSerializeSize(boost::get<0>(item), nType, nVersion);
-    nSize += GetSerializeSize(boost::get<1>(item), nType, nVersion);
-    nSize += GetSerializeSize(boost::get<2>(item), nType, nVersion);
-    nSize += GetSerializeSize(boost::get<3>(item), nType, nVersion);
-    return nSize;
-}
-
-template<typename Stream, typename T0, typename T1, typename T2, typename T3>
-void Serialize(Stream& os, const boost::tuple<T0, T1, T2, T3>& item, int nType, int nVersion)
-{
-    Serialize(os, boost::get<0>(item), nType, nVersion);
-    Serialize(os, boost::get<1>(item), nType, nVersion);
-    Serialize(os, boost::get<2>(item), nType, nVersion);
-    Serialize(os, boost::get<3>(item), nType, nVersion);
-}
-
-template<typename Stream, typename T0, typename T1, typename T2, typename T3>
-void Unserialize(Stream& is, boost::tuple<T0, T1, T2, T3>& item, int nType, int nVersion)
-{
-    Unserialize(is, boost::get<0>(item), nType, nVersion);
-    Unserialize(is, boost::get<1>(item), nType, nVersion);
-    Unserialize(is, boost::get<2>(item), nType, nVersion);
-    Unserialize(is, boost::get<3>(item), nType, nVersion);
-}
-
-
-
-//
 // map
 //
 template<typename K, typename T, typename Pred, typename A>
@@ -788,13 +743,6 @@ struct ser_streamplaceholder
     int nType;
     int nVersion;
 };
-
-
-
-
-
-
-
 
 
 
