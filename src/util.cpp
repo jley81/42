@@ -446,7 +446,7 @@ bool ParseMoney(const char* pszIn, int64_t& nRet)
         return false;
     if (nUnits < 0 || nUnits > COIN)
         return false;
-    int64_t nWhole = atoi64(strWhole);
+    int64_t nWhole = strtoll(strWhole);
     int64_t nValue = nWhole*COIN + nUnits;
 
     nRet = nValue;
@@ -578,7 +578,7 @@ std::string GetArg(const std::string& strArg, const std::string& strDefault)
 int64_t GetArg(const std::string& strArg, int64_t nDefault)
 {
     if (mapArgs.count(strArg))
-        return atoi64(mapArgs[strArg]);
+        return strtoll(mapArgs[strArg]);
     return nDefault;
 }
 
