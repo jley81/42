@@ -3,10 +3,6 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef __cplusplus
-# error This header can only be compiled as C++.
-#endif
-
 #ifndef __INCLUDED_PROTOCOL_H__
 #define __INCLUDED_PROTOCOL_H__
 
@@ -25,12 +21,11 @@ inline unsigned short GetDefaultPort()
 
 extern unsigned char pchMessageStart[4];
 
-/** Message header.
- * (4) message start.
- * (12) command.
- * (4) size.
- * (4) checksum.
- */
+// Message header.
+// (4) network identifier.
+// (12) command.
+// (4) size.
+// (4) checksum.
 class CMessageHeader
 {
     public:
