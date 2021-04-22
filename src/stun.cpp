@@ -823,7 +823,6 @@ static int StunRequest2(int sock, struct sockaddr_in *server, struct sockaddr_in
     unsigned char reply_buf[1024];
     fd_set rfds;
     struct timeval to = { STUN_TIMEOUT, 0 };
-    struct sockaddr_in src;
 #ifdef WIN32
     int srclen;
 #else
@@ -838,7 +837,7 @@ static int StunRequest2(int sock, struct sockaddr_in *server, struct sockaddr_in
     res = select(sock + 1, &rfds, NULL, NULL, &to);
     if (res <= 0)  /* timeout or error */
         return -11;
-    memset(&src, 0, sizeof(src));
+    struct sockaddr_in src = {};
     srclen = sizeof(src);
     /* XXX pass -1 in the size, because stun_handle_packet might
    * write past the end of the buffer.
@@ -847,7 +846,6 @@ static int StunRequest2(int sock, struct sockaddr_in *server, struct sockaddr_in
                    0, (struct sockaddr *)&src, &srclen);
     if (res <= 0)
         return -12;
-    memset(mapped, 0, sizeof(struct sockaddr_in));
     return stun_handle_packet(sock, &src, reply_buf, res, stun_get_mapped, mapped);
 } // StunRequest2
 
@@ -858,18 +856,15 @@ static int StunRequest(const char *host, uint16_t port, struct sockaddr_in *mapp
         return -1;
 
     SOCKET sock = INVALID_SOCKET;
-    struct sockaddr_in server, client;
-    memset(&server, 0, sizeof(server));
-    memset(&client, 0, sizeof(client));
-    server.sin_family = client.sin_family = AF_INET;
-
-    server.sin_addr = *(struct in_addr*) hostinfo->h_addr;
-    server.sin_port = htons(port);
-
     sock = socket(AF_INET, SOCK_DGRAM, 0);
     if(sock == INVALID_SOCKET)
         return -2;
 
+    struct sockaddr_in server = {}, client = {};
+
+    server.sin_family = client.sin_family = AF_INET;
+    server.sin_addr = *(struct in_addr*) hostinfo->h_addr;
+    server.sin_port = htons(port);
     client.sin_addr.s_addr = htonl(INADDR_ANY);
 
     int rc = -3;
