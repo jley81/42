@@ -6,10 +6,10 @@
 #include "guiconstants.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
-
+#if QT_VERSION < 0x050000
 #include <QPixmap>
 #include <QUrl>
-
+#endif
 #include <qrencode.h>
 
 QRCodeDialog::QRCodeDialog(const QString &addr, const QString &label, bool enableReq, QWidget *parent) :

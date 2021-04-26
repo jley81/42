@@ -9,7 +9,8 @@
 #include <QBuffer>
 #include <QWidget>
 
-extern void qt_mac_set_dock_menu(QMenu*);
+#include <QTemporaryFile>
+#include <QImageWriter>
 
 #undef slots
 #include <Cocoa/Cocoa.h>

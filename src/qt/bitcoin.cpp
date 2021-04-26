@@ -152,11 +152,12 @@ int main(int argc, char *argv[])
 {
     // Do this early as we don't want to bother initializing if we are just calling IPC
     ipcScanRelay(argc, argv);
-#if QT_VERSION < 0x050000
     // Internal string conversion is all UTF-8
+#if QT_VERSION < 0x050000
     QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
+
     Q_INIT_RESOURCE(bitcoin);
     QApplication app(argc, argv);
 
@@ -283,4 +284,5 @@ int main(int argc, char *argv[])
     }
     return 0;
 }
+
 #endif // BITCOIN_QT_TEST
