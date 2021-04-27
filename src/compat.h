@@ -33,7 +33,9 @@
 #include <net/if.h>
 #include <netinet/in.h>
 #include <ifaddrs.h>
+#endif
 
+#ifndef _WIN64
 typedef u_int SOCKET;
 #endif
 
