@@ -43,7 +43,7 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64_t MIN_TX_FEE = 1;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 
-static const int64_t MAX_MONEY = 42 * COIN;
+static const int64_t MAX_MONEY = std::numeric_limits<int64_t>::max();
 static const int64_t COIN_YEAR_REWARD = 0 * COIN; // 0% per year
 static const int64_t MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 
