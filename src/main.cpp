@@ -1864,7 +1864,7 @@ bool CBlock::SetBestChain(CTxDB& txdb, CBlockIndex* pindexNew)
                 printf("SetBestChain() : TxnBegin 2 failed\n");
                 break;
             }
-            // errors now are not fatal, we still did a reorganisation to a new chain in a valid way
+            // errors now are not fatal, we still did a reorganization to a new chain in a valid way
             if (!block.SetBestChainInner(txdb, *rit))
                 break;
         }
