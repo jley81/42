@@ -22,6 +22,20 @@ Specifications
 - JSON-RPC Port: 2121 (21210 for testnet)
 
 
+Intro
+===========================
+42 is the original 42-coin client and it builds the backbone of the
+network. It downloads and, by default, stores the entire history of
+42-coin transactions, which requires a few hundred megabytes of disk
+space.
+
+Depending on the speed of your computer and network connection, the
+synchronization process can take anywhere from a few minutes to a hour
+or more.
+
+To download 42, visit [42-coin.org](https://42-coin.org/#download/).
+
+
 Development process
 ===========================
 
