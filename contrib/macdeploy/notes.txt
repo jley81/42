@@ -1,5 +1,5 @@
 
-macdeployqtplus works best on OS X Lion, for Snow Leopard you'd need to install
+macdeployqtplus works best on macOS Lion, for Snow Leopard you'd need to install
 Python 2.7 and make it your default Python installation.
 
 You will need the appscript package for the fancy disk image creation to work.

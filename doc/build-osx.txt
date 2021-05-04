@@ -1,9 +1,9 @@
 Copyright (c) 2017-2019 42 Developers
 
-Mac OS X Build Instructions and Notes
+macOS Build Instructions and Notes
 =====================================
 
-MacOS 10.11.6 - El Capitan was used in this manual. All of the commands should be executed in a Terminal application. The built-in one is located in /Applications/Utilities. 
+macOS 10.11.6 - El Capitan was used in this manual. All of the commands should be executed in a Terminal application. The built-in one is located in /Applications/Utilities. 
 
 1. Install Xcode (7.3.1 for El Capitan), run it and accept the license agreement:
 

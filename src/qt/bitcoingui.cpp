@@ -188,7 +188,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     if (!fUseBlackTheme)
     {
         // Override style sheet for progress bar for styles that have a segmented progress bar,
-        // as they make the text unreadable (workaround for issue #1071)
+        // as they make the text unreadable (work around for issue #1071)
         // See https://qt-project.org/doc/qt-4.8/gallery.html
         QString curStyle = qApp->style()->metaObject()->className();
         if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")

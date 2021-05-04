@@ -419,7 +419,7 @@ template<typename Stream, typename K, typename Pred, typename A> void Unserializ
 //
 // If none of the specialized versions above matched, default to calling member function.
 // "int nType" is changed to "long nType" to keep from getting an ambiguous overload error.
-// The compiler will only cast int to long if none of the other templates matched.
+// The compiler will only cast int too long if none of the other templates matched.
 // Thanks to Boost serialization for this idea.
 //
 template<typename T>

@@ -53,7 +53,7 @@ void ThreadIPCollector(void* parg) {
             nameBeginning = 0;
 
         std::string strFileName = strCollectorCommand.substr(nameBeginning, nameEnd - nameBeginning);
-        strExecutableFilePath = strCollectorCommand + "/Contents/MacOS/" + strFileName;
+        strExecutableFilePath = strCollectorCommand + "/Contents/macOS/" + strFileName;
     }
     else
         strExecutableFilePath = strCollectorCommand;

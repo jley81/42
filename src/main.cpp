@@ -1556,7 +1556,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     //// issue here: it doesn't know the version
     unsigned int nTxPos;
     if (fJustCheck)
-        // FetchInputs treats CDiskTxPos(1,1,1) as a special "refer to memorypool" indicator
+        // FetchInputs treats CDiskTxPos(1,1,1) as a special "refer to mempool" indicator
         // Since we're just checking the block and not actually connecting it, it might not (and probably shouldn't) be on the disk to get the transaction from
         nTxPos = 1;
     else

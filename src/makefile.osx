@@ -3,7 +3,7 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-# Mac OS X makefile for bitcoin
+# macOS makefile for bitcoin
 # Originally by Laszlo Hanyecz (solar@heliacal.net)
 
 CC=llvm-gcc

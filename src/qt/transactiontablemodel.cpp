@@ -548,7 +548,7 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
         case Status:
             return QString::fromStdString(rec->status.sortKey);
         case Date:
-            // We need cast here to prevent ambigious conversion error
+            // We need cast here to prevent ambiguous conversion error
             return static_cast<qlonglong>(rec->time);
         case Type:
             return formatTxType(rec);

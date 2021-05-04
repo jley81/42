@@ -1,4 +1,4 @@
-﻿Данный способ должен подходить для любой Unix системы: Linux, FreeBSD, MacOS X
+﻿Данный способ должен подходить для любой Unix системы: Linux, FreeBSD, macOS
 Данное руководство писалось на Linux Mint 17.1 ( http://linuxmint.com/ ) и проверялось на Ubuntu 16.04 (https://www.ubuntu.com/)
 
 1. Подготовка системы для кросскомпиляции.

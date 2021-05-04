@@ -62,7 +62,7 @@ Windows build instructions:
 
 - Copy the contents of the folder "deps" to "X:\\QtSDK\\mingw", replace X:\\ with the location where you installed the Qt SDK. Make sure that the contents of "deps\\include" end up in the current "include" directory.
 
-- Open the .pro file in QT creator and build as normal (ctrl-B)
+- Open the .pro file in Qt Creator and build as normal (ctrl-B)
 
 .. _`QT Windows SDK`: http://qt.nokia.com/downloads/sdk-windows-cpp
 .. _`dependencies archive`: https://download.visucore.com/bitcoin/qtgui_deps_1.zip
@@ -70,10 +70,10 @@ Windows build instructions:
 .. _`610945D0`: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x610945D0
 
 
-Mac OS X
---------
+macOS
+-----
 
-- Download and install the `Qt Mac OS X SDK`_. It is recommended to also install Apple's Xcode with UNIX tools.
+- Download and install the `Qt macOS SDK`_. It is recommended to also install Apple's Xcode with UNIX tools.
 
 - Download and install `MacPorts`_.
 
@@ -86,7 +86,7 @@ Mac OS X
 
 - Open the .pro file in Qt Creator and build as normal (cmd-B)
 
-.. _`Qt Mac OS X SDK`: http://qt.nokia.com/downloads/sdk-mac-os-cpp
+.. _`Qt macOS SDK`: http://qt.nokia.com/downloads/sdk-mac-os-cpp
 .. _`MacPorts`: http://www.macports.org/install.php
 
 

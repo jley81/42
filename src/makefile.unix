@@ -46,7 +46,7 @@ LIBS+= \
 # Hardening
 # Make some classes of vulnerabilities unexploitable in case one is discovered.
 #
-    # This is a workaround for Ubuntu bug #691722, the default -fstack-protector causes
+    # This is a work around for Ubuntu bug #691722, the default -fstack-protector causes
     # -fstack-protector-all to be ignored unless -fno-stack-protector is used first.
     # see: https://bugs.launchpad.net/ubuntu/+source/gcc-4.5/+bug/691722
     HARDENING=-fno-stack-protector

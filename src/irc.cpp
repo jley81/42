@@ -296,7 +296,7 @@ void ThreadIRCSeed2(void* parg)
             // Don't use our IP as our nick if we're not listening
             if (!fNoListen && addrFromIRC.IsRoutable())
             {
-                // IRC lets you to re-nick
+                // IRC let's you to re-nick
                 AddLocal(addrFromIRC, LOCAL_IRC);
                 strMyName = EncodeAddress(GetLocalAddress(&addrConnect));
                 Send(hSocket, strprintf("NICK %s\r", strMyName.c_str()).c_str());
