@@ -3713,21 +3713,26 @@ Reduce the number of addresses involved in the address creation.</translation>
     </message>
     <message>
         <location filename="../transactionview.cpp" line="134"/>
+        <source>Copy transaction details</source>
+        <translation>Copy transaction details</translation>
+    </message>
+    <message>
+        <location filename="../transactionview.cpp" line="135"/>
         <source>Copy transaction ID</source>
         <translation>Copy transaction ID</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="135"/>
+        <location filename="../transactionview.cpp" line="136"/>
         <source>Edit label</source>
         <translation>Edit label</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="136"/>
+        <location filename="../transactionview.cpp" line="137"/>
         <source>Show transaction details</source>
         <translation>Show transaction details</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="137"/>
+        <location filename="../transactionview.cpp" line="138"/>
         <source>Clear orphans</source>
         <translation>Clear orphans</translation>
     </message>

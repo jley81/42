@@ -3715,21 +3715,26 @@ Reduce the number of addresses involved in the address creation.</source>
     </message>
     <message>
         <location filename="../transactionview.cpp" line="134"/>
+        <source>Copy transaction details</source>
+        <translation>Скопировать информацию о транзакции</translation>
+    </message>
+    <message>
+        <location filename="../transactionview.cpp" line="135"/>
         <source>Copy transaction ID</source>
         <translation>Скопировать ID транзакции</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="135"/>
+        <location filename="../transactionview.cpp" line="136"/>
         <source>Edit label</source>
         <translation>Изменить метку</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="136"/>
+        <location filename="../transactionview.cpp" line="137"/>
         <source>Show transaction details</source>
         <translation>Показать подробности транзакции</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="137"/>
+        <location filename="../transactionview.cpp" line="138"/>
         <source>Clear orphans</source>
         <translation>Удалить орфаны</translation>
     </message>

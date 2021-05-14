@@ -67,6 +67,7 @@ private slots:
     void editLabel();
     void copyLabel();
     void copyAmount();
+    void copyTxPlainText();
     void copyTxID();
     void clearOrphans();
     void openThirdPartyTxUrl(QString url);

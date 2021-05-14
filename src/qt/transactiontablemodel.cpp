@@ -595,6 +595,34 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
     case AmountRole:
         // And here
         return static_cast<qlonglong>(rec->credit + rec->debit);
+    case TxPlainTextRole:
+        {
+            QString details;
+            QDateTime date = QDateTime::fromTime_t(static_cast<uint>(rec->time));
+            QString txLabel = walletModel->getAddressTableModel()->labelForAddress(QString::fromStdString(rec->address));
+
+            details.append(date.toString("M/d/yy HH:mm"));
+            details.append(" ");
+            details.append(formatTxStatus(rec));
+            details.append(". ");
+            if(!formatTxType(rec).isEmpty()) {
+                details.append(formatTxType(rec));
+                details.append(" ");
+            }
+            if(!rec->address.empty()) {
+                if(txLabel.isEmpty())
+                    details.append(tr("(no label)") + " ");
+                else {
+                    details.append("(");
+                    details.append(txLabel);
+                    details.append(") ");
+                }
+                details.append(QString::fromStdString(rec->address));
+                details.append(" ");
+            }
+            details.append(formatTxAmount(rec, false));
+            return details;
+        }
     case TxIDRole:
         return QString::fromStdString(rec->getTxID());
     case TxHashRole:

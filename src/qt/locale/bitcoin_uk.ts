@@ -3717,22 +3717,27 @@ Reduce the number of addresses involved in the address creation.</source>
         <translation>Скопіювати суму</translation>
     </message>
     <message>
+        <location filename="../transactionview.cpp" line="135"/>
+        <source>Copy transaction details</source>
+        <translation>Скопіювати інформацію про транзакцію</translation>
+    </message>
+    <message>
         <location filename="../transactionview.cpp" line="134"/>
         <source>Copy transaction ID</source>
         <translation>Скопіювати ID транзакції</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="135"/>
+        <location filename="../transactionview.cpp" line="136"/>
         <source>Edit label</source>
         <translation>Редагувати мітку</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="136"/>
+        <location filename="../transactionview.cpp" line="137"/>
         <source>Show transaction details</source>
         <translation>Показати деталі транзакції</translation>
     </message>
     <message>
-        <location filename="../transactionview.cpp" line="137"/>
+        <location filename="../transactionview.cpp" line="138"/>
         <source>Clear orphans</source>
         <translation>Видалити орфани</translation>
     </message>

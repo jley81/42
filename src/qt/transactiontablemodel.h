@@ -42,6 +42,8 @@ public:
         LabelRole,
         /** Net amount of transaction */
         AmountRole,
+        /** Whole transaction as plain text */
+        TxPlainTextRole,
         /** Unique identifier */
         TxIDRole,
         /** Transaction hash */
