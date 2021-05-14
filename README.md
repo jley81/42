@@ -33,7 +33,7 @@ Depending on the speed of your computer and network connection, the
 synchronization process can take anywhere from a few minutes to a hour
 or more.
 
-To download 42, visit [42-coin.org](https://42-coin.org/#download/).
+To download 42, visit [42-coin.org](https://42-coin.org/#download).
 
 
 Development process
